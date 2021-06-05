@@ -11,6 +11,7 @@ class Category(models.Model):
 
 class Song(models.Model):
     song_name = models.CharField(max_length=50, default='')
+    singer_name = models.CharField(max_length=50, default='')
     song_category = models.ForeignKey(Category, on_delete=models.CASCADE)
     upload_song = models.FileField(upload_to='songs', blank=True)
     song_image = models.ImageField(upload_to='images', blank=True)
